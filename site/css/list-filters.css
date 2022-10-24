@@ -1,0 +1,15 @@
+#list-filter-component {
+  position: relative;
+  float: right;
+  right: 0;
+  height: 2.5em;
+  width: 8.5rem;
+  z-index: 999;
+}
+
+#list-filter-component .button {
+  width: 1.7rem;
+  margin: 0 0.1rem;
+  border-bottom-width: 3px;
+  border-radius: 0 0 0.5rem 0.5rem;
+}

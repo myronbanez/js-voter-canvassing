@@ -1,0 +1,15 @@
+#search-box-component {
+  position: relative;
+  height: 6.5em;
+  z-index: 999;
+}
+
+#search-box-component .input-container {
+  height: 2.1rem;
+  margin-right: 0.8rem;
+}
+
+#search-box-component .input-container input {
+  height: 100%;
+  font-size: 0.9rem;
+}

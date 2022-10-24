@@ -1,0 +1,99 @@
+html {
+  font-family: Roboto, sans-serif;
+}
+
+.component-margin-left {
+  margin-left: 1rem;
+}
+
+.component-margin-right {
+  margin-right: 1rem;
+}
+
+@media only screen and (max-width: 400px) {
+  .component-margin-left {
+    margin-left: 0.5rem;
+  }
+
+  .component-margin-right {
+    margin-right: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .component-margin-left {
+    margin-left: 2rem;
+  }
+
+  .component-margin-right {
+    margin-right: 2rem;
+  }
+}
+
+.button {
+  background-color: #0d59a9;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.8rem;
+  float: left;
+  color: #fff;
+  border: 1.5px solid #0d59a9;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.hide-show {
+  width: 2.2rem;
+  height: 2rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  border: 1.5px solid #0d59a9;
+  padding-left: 0.5rem;
+  color: #0d59a9;
+  border-bottom-width: 3px;
+  border-radius: 0 0 0.5em 0.5em;
+  font-size: 1rem;
+}
+
+input:focus {
+  background-color: #fff;
+  border: 3px solid #0d59a9;
+  outline: none;
+  border-bottom-width: 3px;
+  border-radius: 0 0 0.5em 0.5em;
+}
+
+.hidable-container {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.fix-height {
+  height: 2em;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+  position: absolute;
+  z-index: 99999;
+  bottom: 120%;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.panel {
+  height: 100%;
+  border: 1.5px solid #0d59a9;
+  padding-left: 0.5rem;
+  color: #0d59a9;
+  border-bottom-width: 3px;
+  border-radius: 0 0 0.5em 0.5em;
+  font-size: 1rem;
+}

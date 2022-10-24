@@ -1,0 +1,59 @@
+#list-loader-component {
+  position: relative;
+  height: 3.2em;
+  width: 10rem;
+  float: left;
+  z-index: 999;
+  margin: 0;
+}
+
+#list-loader-hidable-chunk {
+  transition: transform 0.5s;
+  z-index: 1;
+  height: 100%;
+}
+
+#list-loader-component .hide-show {
+  font-size: 3rem;
+  width: 1.5rem;
+  line-height: 0.5;
+  border-bottom-width: 3px;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+#list-loader-component .input-container {
+  height: 2em;
+  float: left;
+  margin-left: 0.3rem;
+}
+
+#list-loader-component .input-container input {
+  height: 100%;
+  width: 4.6rem;
+  font-size: 0.9rem;
+}
+
+#list-loader-load {
+  border-right-width: 3px;
+  border-radius: 0 0.5rem 0.5rem 0;
+  width: 1.7rem;
+  float: left;
+  margin-left: 0.2em;
+}
+
+#list-loader-load .tooltiptext {
+  color: #0d59a9;
+  text-align: center;
+  width: 8em;
+  height: 1rem;
+  padding: 0.2rem 0.5rem;
+  position: absolute;
+  bottom: 120%;
+  left: 60%;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+#list-loader-load:hover .tooltiptext {
+  visibility: visible;
+}
