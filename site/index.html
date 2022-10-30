@@ -1,200 +1,209 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Canvasser</title>
 
-    <!-- Viewport setup for responsive design -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<head>
+  <title>Canvasser</title>
 
-    <!-- Leaflet style sheet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/framework.css">
-    <link rel="stylesheet" href="css/map.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/banner.css">
-    <link rel="stylesheet" href="css/list-loader.css">
-    <link rel="stylesheet" href="css/voter-list.css">
-    <link rel="stylesheet" href="css/list-filters.css">
-    <link rel="stylesheet" href="css/search-box.css">
-    <link rel="stylesheet" href="css/main-box.css">
-    <link rel="stylesheet" href="css/basic-info-panel.css">
+  <!-- Viewport setup for responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  </head>
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
 
-  <body>
+  <!-- Leaflet style sheet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin="" />
 
-    <!-- Top banner or navigator -->
-    <div id="banner-component">
-      <p>CANVASSERS</p>
-    </div>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/framework.css">
+  <link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/banner.css">
+  <link rel="stylesheet" href="css/list-loader.css">
+  <link rel="stylesheet" href="css/voter-list.css">
+  <link rel="stylesheet" href="css/list-filters.css">
+  <link rel="stylesheet" href="css/search-box.css">
+  <link rel="stylesheet" href="css/main-box.css">
+  <link rel="stylesheet" href="css/basic-info-panel.css">
 
-    <!-- Map in the back (full screen, fixed) -->
-    <div id="map-component">
+</head>
 
-    </div>
+<body>
 
-    <div id="top-component" class="main-box">
-      <!-- Widget to load a list from the thousands of lists -->
-      <div id="list-loader-component">
-        <div class="button hide-show" id="list-loader-hide">
-          <span class="material-symbols-outlined">chevron_left</span>
-        </div>
+  <!-- Top banner or navigator -->
+  <div id="banner-component">
+    <p>CANVASSERS</p>
+  </div>
 
-        <!-- Show list loader button: default hidden -->
-        <div class="hidable-container">
-          <div id="list-loader-hidable-chunk">
-            <!-- Hide list loader button -->
-            <div class="input-container">
-              <input type="text" class="text-input" id="list-loader-input" 
+  <!-- Map in the back (full screen, fixed) -->
+  <div id="map-component">
+
+  </div>
+
+  <div id="top-component" class="main-box">
+    <!-- Widget to load a list from the thousands of lists -->
+    <div id="list-loader-component">
+      <div class="button hide-show" id="list-loader-hide">
+        <span class="material-symbols-outlined">chevron_left</span>
+      </div>
+
+      <!-- Show list loader button: default hidden -->
+      <div class="hidable-container">
+        <div id="list-loader-hidable-chunk">
+          <!-- Hide list loader button -->
+          <div class="input-container">
+            <input type="text" class="text-input" id="list-loader-input"
               oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
               placeholder="Which list?">
-            </div>
-    
-            <div class="button" id="list-loader-load">
-              <span class="material-symbols-outlined">done_all</span>
-              <div class="tooltiptext">
-                <div class="tooltip-content">Load List</div>
-              </div>             
+          </div>
+
+          <div class="button" id="list-loader-load">
+            <span class="material-symbols-outlined">done_all</span>
+            <div class="tooltiptext">
+              <div class="tooltip-content">Load List</div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Filter map by some attributes -->
-      <div id="list-filter-component">
-        <div class="widgets-container">
-          <div class="button filter-button"></div>
-          <div class="button filter-button"></div>
-          <div class="button filter-button"></div>
-          <div class="button filter-button"></div>
-        </div>
-
-        <div class="dropdown filter-dropdown"></div>
+    <!-- Filter map by some attributes -->
+    <div id="list-filter-component">
+      <div class="widgets-container">
+        <div class="button filter-button"></div>
+        <div class="button filter-button"></div>
+        <div class="button filter-button"></div>
+        <div class="button filter-button"></div>
       </div>
 
-      <!-- Search box -->
-      <div id="search-box-component">
-        <div class="input-container">
-          <input type="text" class="text-input" id="search-box-input" placeholder="Search Name">
-        </div>
-      </div>
+      <div class="dropdown filter-dropdown"></div>
+    </div>
 
-      <!-- Show voter residences in a list -->
-      <div id="voter-list-component">
-        <div class="panel">
-          <div class="scroll-container">
-            <ul id="voter-list">
-              <li>
-                <div class="list-name">Michael Lazar</div>
+    <!-- Search box -->
+    <div id="search-box-component">
+      <div class="input-container">
+        <input onkeyup="searchInputFilter()" type="text" class="text-input" id="search-box-input" placeholder="Search Name">
+      </div>
+    </div>
+    <!-- myron notes: the only thing added is onkeyup() -->
+
+    <!-- Show voter residences in a list -->
+    <div id="voter-list-component">
+      <div class="panel">
+        <div class="scroll-container">
+          <ul id="voter-list">
+            <li>
+              <div class="list-name">Michael Lazar</div>
                 <div class="list-address">13355 Noel Rd</div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
-              </li>
-              <li>
-                <div class="list-name">Myron Bañez</div>
+            </li>
+            <li>
+              <div class="list-name">Myron Bañez</div>
                 <div class="list-address">3600 Market</div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
-              </li>
-              <li>
-                <div class="list-name">Yihan Zhang</div>
+            </li>
+            <li>
+              <div class="list-name">Yihan Zhang</div>
                 <div class="list-address">1500 Chestnut</div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
-              </li>
-              <li>
-                <div class="list-name">Nicholas Hand</div>
+            </li>
+            <li>
+              <div class="list-name">Nicholas Hand</div>
                 <div class="list-address">3700 Lancaster</div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
-              </li>
-              <li>
-                <div class="list-name">Leonardo da Vinci</div>
+            </li>
+            <li>
+              <div class="list-name">Leonardo da Vinci</div>
                 <div class="list-address">3700 Florence</div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
-              </li>
-              <li>
-                <div class="list-name">Jie Li</div>
+            </li>
+            <li>
+              <div class="list-name">Jie Li</div>
                 <div class="list-address">3700 Lancaster</div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
-              </li>
-              <li>
-                <div class="list-name">David Kim</div>
+            </li>
+            <li>
+              <div class="list-name">David Kim</div>
                 <div class="list-address">1254 Spring Garden</div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
-              </li>
-              <li>
-                <div class="list-name">Some Other People</div>
+            </li>
+            <li>
+              <div class="list-name">Some Other People</div>
                 <div class="list-address">888 Random</div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
-              </li>
-            </ul>
-          </div>
-
+            </li>
+          </ul>
         </div>
 
       </div>
 
     </div>
 
-    <div id="bottom-component" class="main-box">
-      <!-- Show voter residences in a list -->
-      <div id="basic-panel-component">
-        <div class="panel">
-          <div id="panel-name">
-            THIS PERSON HAS A LONG NAME
-          </div>
-          <div id="panel-status">
-            <div class="button button-short"></div>
-            <div class="button button-long"></div>
-            <div class="button button-short"></div>
-            <div class="button button-long"></div>
-            <div class="button button-long"></div>
-          </div>
-          <div id="panel-address">3600 Market Street</div>
+  </div>
+
+  <div id="bottom-component" class="main-box">
+    <!-- Show voter residences in a list -->
+    <div id="basic-panel-component">
+      <div class="panel">
+        <div id="panel-name">
+          THIS PERSON HAS A LONG NAME
         </div>
+        <div id="panel-status">
+          <div class="button button-short"></div>
+          <div class="button button-long"></div>
+          <div class="button button-short"></div>
+          <div class="button button-long"></div>
+          <div class="button button-long"></div>
+        </div>
+        <div id="panel-address">3600 Market Street</div>
       </div>
+    </div>
 
 
     <!-- Leaflet JavaScript -->
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""></script>
 
     <!-- LoDash -->
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-    
+
     <!-- Papa Parse -->
     <script src="https://unpkg.com/papaparse@5.3.2/papaparse.min.js"></script>
 
     <!-- Google Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <!-- Custom JS -->
     <script type="module" src="js/map.js"></script>
@@ -205,5 +214,27 @@
     <script type="module" src="js/list-filters.js"></script>
     <script type="module" src="js/custom-lists.js"></script>
 
-  </body>
+    <!-- myron notes: jie, this should have been in list-filters but for some reason, this doesn't work in a js file but works in html -->
+    <script>
+      function searchInputFilter() {
+        const input = document.getElementById("search-box-input");
+        const filter = input.value.toUpperCase();
+        const ul = document.getElementById("voter-list");
+        const li = ul.getElementsByTagName("li");
+        // <div class="list-name">Some Other People</div>
+
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByClassName("list-name")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+
+</body>
+
 </html>

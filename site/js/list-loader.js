@@ -134,6 +134,3 @@ loadButton.addEventListener("click", ( ) => {
 loadButton.addEventListener("mouseout", ( ) => {
   toolTip.innerHTML = `<div class="tooltip-content">Load List</div>`;
 });
-
-console.log(document.querySelector("#test"));
-
